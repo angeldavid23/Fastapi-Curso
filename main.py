@@ -23,3 +23,7 @@ def read_item(item_id: int,q:Union[str,None] = None):
 @app.get('/calculadora')
 def calculadora(operado_1: float, operado_2:float):
     return {'suma': operado_1 + operado_2}
+
+@app.put('/items/{item_id}')
+def update_item(item_id:int, item:Item):
+    return{'item_name': item.name,'item_id': item_id}
